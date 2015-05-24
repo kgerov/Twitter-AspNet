@@ -1,0 +1,14 @@
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Twitter.Models.dll.config
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Twitter.Models.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Twitter.Models.pdb
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\EntityFramework.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\EntityFramework.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\obj\Debug\Twitter.Models.csprojResolveAssemblyReference.cache
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\obj\Debug\Twitter.Models.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Models\obj\Debug\Twitter.Models.pdb
