@@ -57,3 +57,10 @@ D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\System.Web.WebPages.Razor.xm
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\System.Web.Optimization.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.dll
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.pdb
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Common.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Mvc.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\WebActivatorEx.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Common.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Mvc.xml

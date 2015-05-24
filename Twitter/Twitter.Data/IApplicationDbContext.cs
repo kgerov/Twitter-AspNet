@@ -3,7 +3,7 @@ using Twitter.Models;
 
 namespace Twitter.Data
 {
-    public interface IApplicationDbContect
+    public interface IApplicationDbContext
     {
         IDbSet<Message> Messages { get; set; }
 

@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="IApplicationDbContect.cs" />
+    <Compile Include="IApplicationDbContext.cs" />
     <Compile Include="Migrations\201505241956524_InitialCreate.cs" />
     <Compile Include="Migrations\201505241956524_InitialCreate.Designer.cs">
       <DependentUpon>201505241956524_InitialCreate.cs</DependentUpon>
