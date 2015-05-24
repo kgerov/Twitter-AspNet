@@ -16,7 +16,13 @@ namespace Twitter.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (this.UserProfile != null)
+            {
+                this.ViewBag.Username = this.UserProfile.UserName;
+
+            }
+
+            return this.View();
         }
 
         public ActionResult About()
