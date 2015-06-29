@@ -64,3 +64,8 @@ D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\WebActivatorEx.dll
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Common.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Ninject.Web.Mvc.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Glimpse.Ado.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Glimpse.AspNet.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Glimpse.Core.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Glimpse.EF6.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\Glimpse.Mvc5.dll
