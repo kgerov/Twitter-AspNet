@@ -15,6 +15,8 @@ namespace Twitter.Models
         [Required]
         public int TweetId { get; set; }
 
+        public string Comment { get; set; }
+
         public virtual Tweet Tweet { get; set; }
 
         [Required]

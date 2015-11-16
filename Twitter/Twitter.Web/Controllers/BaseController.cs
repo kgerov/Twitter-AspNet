@@ -41,5 +41,10 @@ namespace Twitter.Web.Controllers
 
             return base.BeginExecute(request, callback, state);
         }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            base.OnException(filterContext);
+        }
     }
 }

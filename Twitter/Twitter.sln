@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C430D4D0-EDE2-4E9B-99CC-8DAEC1A7CFA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalLibraries", "ExternalLibraries", "{DE3EEC83-47A6-41F1-82B6-76F4121AF073}"
+	ProjectSection(SolutionItems) = preProject
+		ExternalLibraries\System.Web.Mvc.Expressions.dll = ExternalLibraries\System.Web.Mvc.Expressions.dll
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Web", "Twitter.Web\Twitter.Web.csproj", "{D4E09D65-4AF7-4675-97BF-DD91365C25F4}"
 EndProject

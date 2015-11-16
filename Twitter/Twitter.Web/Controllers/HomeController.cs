@@ -11,7 +11,7 @@ namespace Twitter.Web.Controllers
         {
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             if (this.UserProfile != null)
             {
@@ -19,12 +19,15 @@ namespace Twitter.Web.Controllers
 
             }
 
+            this.ViewBag.Swag = id;
+
             return this.View();
         }
 
         public ActionResult About()
         {
-            return this.RedirectToAction(x => x.Contact());
+            //return this.RedirectToAction(x => x.Contact());
+            return this.View();
         }
 
         public ActionResult Contact()
