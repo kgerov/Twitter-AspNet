@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Twitter.Models
 {
     public class Tweet
     {
-        private ICollection<UserRetweet> userretweet;
+        private ICollection<Tweet> retweets;
         private ICollection<User> favorites;
         private ICollection<Discussion> discussions;
  
         public Tweet()
         {
-            this.userretweet = new HashSet<UserRetweet>();
+            this.retweets = new HashSet<Tweet>();
             this.favorites = new HashSet<User>();
             this.discussions = new HashSet<Discussion>();
         }
@@ -42,30 +43,21 @@ namespace Twitter.Models
             set { this.discussions = value; }
         }
 
+        public int? RetweetedTweetId { get; set; }
+
+        public virtual Tweet RetweetedTweet { get; set; }
+
+        [InverseProperty("RetweetedTweet")]
+        public virtual ICollection<Tweet> Retweets
+        {
+            get { return this.retweets; }
+            set { this.retweets = value; }
+        }
+
         public virtual ICollection<User> Favorites
         {
             get { return this.favorites; }
             set { this.favorites = value; }
         }
-
-        public virtual ICollection<UserRetweet> UserRetweet
-        {
-            get { return this.userretweet; }
-            set { this.userretweet = value; }
-        }
     }
 }
-
-
-// Self relation
-
-//public int? MainTweetId { get; set; }
-
-//public virtual Tweet MainTweet { get; set; }
-
-//[InverseProperty("MainTweet")] 
-//public virtual ICollection<Tweet> Replies
-//{
-//    get { return this.replies; }
-//    set { this.replies = value; }
-//}

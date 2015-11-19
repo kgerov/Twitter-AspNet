@@ -16,7 +16,6 @@ namespace Twitter.Models
         private ICollection<Message> messagesInbox;
         private ICollection<Message> messagesSend;
         private ICollection<Tweet> favorties;
-        private ICollection<UserRetweet> userretweet;
 
         public User()
         {
@@ -26,7 +25,6 @@ namespace Twitter.Models
             this.messagesInbox = new HashSet<Message>();
             this.messagesSend = new HashSet<Message>();
             this.favorties = new HashSet<Tweet>();
-            this.userretweet = new HashSet<UserRetweet>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
@@ -82,12 +80,6 @@ namespace Twitter.Models
         {
             get { return this.favorties; }
             set { this.favorties = value; }
-        }
-
-        public virtual ICollection<UserRetweet> UserRetweet
-        {
-            get { return this.userretweet; }
-            set { this.userretweet = value; }
         }
     }
 }

@@ -24,7 +24,6 @@ namespace Twitter.Web.Controllers
         {
             var userProfile = this.Data.Users.All()
                .Include(x => x.Tweets)
-               .Include(x => x.UserRetweet)
                .Where(x => x.UserName == username)
                .Select(UserViewModel.ViewModel)
                .FirstOrDefault();
