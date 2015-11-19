@@ -12,7 +12,7 @@ D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\bin\Debug\EntityFramework.SqlSe
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.csprojResolveAssemblyReference.cache
-D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.dll
-D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.pdb
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.Migrations.InitialCreate.resources
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.csproj.GenerateResource.Cache
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Data\obj\Debug\Twitter.Data.pdb

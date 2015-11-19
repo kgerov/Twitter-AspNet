@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 using Twitter.Data.UnitOfWork;
 using Twitter.Web.Models;
@@ -18,22 +19,17 @@ namespace Twitter.Web.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Profile(string username)
         {
-            var user = Data.Users.All().FirstOrDefault(x => x.UserName == username);
+            var userProfile = this.Data.Users.All()
+               .Include(x => x.Tweets)
+               .Include(x => x.UserRetweet)
+               .Where(x => x.UserName == username)
+               .Select(UserViewModel.ViewModel)
+               .FirstOrDefault();
 
-            if (user != null)
-            {
-                var userViewModel = new UserViewModel()
-                {
-                    UserName = user.UserName,
-                    Email = user.Email
-                };
-
-                return View(userViewModel);
-            }
-
-            return this.HttpNotFound("User does not exist");
+            return View(userProfile);
         }
     }
 }

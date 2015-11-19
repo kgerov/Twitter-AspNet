@@ -11,11 +11,11 @@ namespace Twitter.Web
 
             routes.MapRoute(
                 name: "Users",
-                url: "User/{username}",
+                url: "Users/{action}/{username}",
                 defaults: new
                 {
                     controller = "Users", 
-                    action = "Profile", 
+                    action = "Profile"
                 }
             );
 

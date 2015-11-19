@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Security.Policy;
 
 namespace Twitter.Models
 {
@@ -29,7 +28,7 @@ namespace Twitter.Models
 
         public bool IsReply { get; set; }
 
-        public int MainTweetId { get; set; }
+        public int? MainTweetId { get; set; }
 
         public virtual Tweet MainTweet { get; set; }
 
@@ -40,14 +39,14 @@ namespace Twitter.Models
             set { this.replies = value; }
         }
 
-        public int CommentTweetId { get; set; }
+        public int? CommentTweetId { get; set; }
 
         public virtual Tweet CommentTweet { get; set; }
 
         [Required]
-        public string PublisherId { get; set; }
+        public string UserId { get; set; }
 
-        public virtual User Publisher { get; set; }
+        public virtual User User { get; set; }
 
         public virtual ICollection<User> Favorites
         {

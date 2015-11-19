@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Twitter.Data.UnitOfWork;
-using System.Web.Mvc.Expressions;
+using Twitter.Web.Models;
 
 namespace Twitter.Web.Controllers
 {
@@ -11,22 +12,32 @@ namespace Twitter.Web.Controllers
         {
         }
 
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
+            var tweets = this.Data.Tweets.All()
+                .Select(TweetViewModel.ViewModel)
+                .ToList();
+
+            HomeViewModel homeModel = new HomeViewModel()
+            {
+                Tweets = tweets
+            };
+
             if (this.UserProfile != null)
             {
-                this.ViewBag.Username = this.UserProfile.UserName;
-
+                homeModel.isLoggedIn = true;
+                homeModel.UserName = this.UserProfile.UserName;
+            }
+            else
+            {
+                homeModel.isLoggedIn = false;
             }
 
-            this.ViewBag.Swag = id;
-
-            return this.View();
+            return this.View(homeModel);
         }
 
         public ActionResult About()
         {
-            //return this.RedirectToAction(x => x.Contact());
             return this.View();
         }
 

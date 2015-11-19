@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Routing;
-using Twitter.Data;
 using Twitter.Data.UnitOfWork;
 using Twitter.Models;
-using WebGrease;
 
 namespace Twitter.Web.Controllers
 {

@@ -67,7 +67,7 @@ namespace Twitter.Data
 
 
             modelBuilder.Entity<Tweet>()
-                .HasRequired(m => m.Publisher)
+                .HasRequired(m => m.User)
                 .WithMany(u => u.Tweets)
                 .WillCascadeOnDelete(false);
 
