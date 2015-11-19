@@ -1,36 +1,11 @@
-﻿@model IEnumerable<Twitter.Web.Models.TweetViewModel>
+﻿@model Twitter.Web.Models.TweetViewModel
 
 @{
     ViewBag.Title = "TweetViewModel";
 }
 
-<h2>TweetViewModel</h2>
+<div class="col-md-12 col-centered tweet">
+    <p>@Model.Content</p>
+    <p>@Model.DatePublished</p>
+</div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DatePublished)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DatePublished)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>

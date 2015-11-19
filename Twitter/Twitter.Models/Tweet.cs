@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Twitter.Models
 {
@@ -9,13 +8,13 @@ namespace Twitter.Models
     {
         private ICollection<UserRetweet> userretweet;
         private ICollection<User> favorites;
-        private ICollection<Tweet> replies;
+        private ICollection<Discussion> discussions;
  
         public Tweet()
         {
             this.userretweet = new HashSet<UserRetweet>();
             this.favorites = new HashSet<User>();
-            this.replies = new HashSet<Tweet>();
+            this.discussions = new HashSet<Discussion>();
         }
 
         public int Id { get; set; }
@@ -26,27 +25,22 @@ namespace Twitter.Models
         [Required]
         public DateTime DatePublished { get; set; }
 
-        public bool IsReply { get; set; }
-
-        public int? MainTweetId { get; set; }
-
-        public virtual Tweet MainTweet { get; set; }
-
-        [InverseProperty("MainTweet")] 
-        public virtual ICollection<Tweet> Replies
-        {
-            get { return this.replies; }
-            set { this.replies = value; }
-        }
-
-        public int? CommentTweetId { get; set; }
-
-        public virtual Tweet CommentTweet { get; set; }
-
         [Required]
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
+
+        public bool IsReply { get; set; }
+
+        public int? DiscussionId { get; set; }
+
+        public virtual Discussion Discussion { get; set; }
+
+        public virtual ICollection<Discussion> Discussions
+        {
+            get { return this.discussions; }
+            set { this.discussions = value; }
+        }
 
         public virtual ICollection<User> Favorites
         {
@@ -61,3 +55,17 @@ namespace Twitter.Models
         }
     }
 }
+
+
+// Self relation
+
+//public int? MainTweetId { get; set; }
+
+//public virtual Tweet MainTweet { get; set; }
+
+//[InverseProperty("MainTweet")] 
+//public virtual ICollection<Tweet> Replies
+//{
+//    get { return this.replies; }
+//    set { this.replies = value; }
+//}

@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 1%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,37 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.tweet {
+    margin-bottom: 5%;
+    border-bottom: 1px solid black;
+}
+
+.tweet-feed {
+    padding: 1% 0%;
+    border: 1px solid black;
+}
+
+.follow-box {
+    margin-left: 1%;
+}
+
+#searchForm input {
+    padding-right: 20px;
+    margin-right: -10px;
+}
+
+#searchFormBtn {
+    margin-left: -20px;
+}
+
+.navbar ul li a:hover {
+    margin-bottom: -3px;
+    border-bottom: 3px solid #5EA9DD;
 }

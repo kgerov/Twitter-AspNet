@@ -1,19 +1,25 @@
-﻿@model Twitter.Web.Models.HomeViewModel
+﻿@using Microsoft.AspNet.Identity
+@model Twitter.Web.Models.HomeViewModel
 
 @{
     ViewBag.Title = "Feed";
 }
 
-<h1>Twitter</h1>
-
-@if (Model.isLoggedIn)
-{
-    <p>@Model.UserName</p>    
-}
 
 <div class="row">
-    @foreach (var tweet in Model.Tweets)
-    {
-        <p>@tweet.Content</p>
-    }
+    <div class="col-md-2">
+        @if (Request.IsAuthenticated)
+        {
+            <p>@User.Identity.GetUserName()</p>
+        }        
+    </div>
+    <div class="col-md-7 tweet-feed">
+        @Html.DisplayFor(x => x.Tweets)
+    </div>
+    <div class = "col-md-2 follow-box">
+        <div class="col-md-12">WHO TO FOLLOW?</div>
+        <div class="col-md-12">
+            @Html.Partial("~/Views/Shared/Footer.cshtml")
+        </div>
+    </div>
 </div>

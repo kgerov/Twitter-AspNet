@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+@if (Request.IsAuthenticated)
+{
+    <li>@Html.ActionLink("Notifications", "About", "Home")</li>
+    <li>@Html.ActionLink("Messages", "Contact", "Home")</li>
+}

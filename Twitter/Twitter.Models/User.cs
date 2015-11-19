@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -35,6 +36,14 @@ namespace Twitter.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string FullName { get; set; }
+
+        public string HomeTown { get; set; }
+
+        public string WebSite { get; set; }
+
+        public DateTime JoinDate { get; set; }
 
         public virtual ICollection<Tweet> Tweets
         {

@@ -17,6 +17,10 @@ namespace Twitter.Web.Models
                 {
                     UserName = x.UserName,
                     Email = x.Email,
+                    FullName = x.FullName,
+                    HomeTown = x.HomeTown,
+                    WebSite = x.WebSite,
+                    JoinDate = x.JoinDate,
                     Tweets = x.Tweets.AsQueryable().Select(TweetViewModel.ViewModel)
                 };
             }
@@ -29,6 +33,12 @@ namespace Twitter.Web.Models
         public string FullName { get; set; }
 
         public string Email { get; set; }
+
+        public string HomeTown { get; set; }
+
+        public string WebSite { get; set; }
+
+        public DateTime JoinDate { get; set; }
 
         public IEnumerable<TweetViewModel> Tweets { get; set; }
     }

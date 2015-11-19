@@ -71,6 +71,11 @@ namespace Twitter.Data
                 .WithMany(u => u.Tweets)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Discussion>()
+                .HasMany(m => m.Replies)
+                .WithOptional(t => t.Discussion)
+                .WillCascadeOnDelete(false);
+
            base.OnModelCreating(modelBuilder);
         }
     }

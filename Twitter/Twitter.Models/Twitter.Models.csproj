@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministrationLog.cs" />
+    <Compile Include="Discussion.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Report.cs" />
     <Compile Include="Tweet.cs" />
