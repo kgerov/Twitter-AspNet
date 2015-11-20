@@ -14,7 +14,8 @@
                 <ul class="dropdown-menu">
                     <li>@Html.ActionLink("Profile", "Profile", "Users", new {username = User.Identity.GetUserName()}, null)</li>
                     <li role="separator" class="divider"></li>
-                    <li>@Html.ActionLink("Settings", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})</li>
+                    <li>@Html.ActionLink("Settings", "Settings", "Users", routeValues: null, htmlAttributes: new { title = "Settings" })</li>
+                    <li>@Html.ActionLink("Manage", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})</li>
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                 </ul>
             </li>

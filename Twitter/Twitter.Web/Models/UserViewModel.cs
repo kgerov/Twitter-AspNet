@@ -21,7 +21,22 @@ namespace Twitter.Web.Models
                     HomeTown = x.HomeTown,
                     WebSite = x.WebSite,
                     JoinDate = x.JoinDate,
+                    Image = x.Image.Photo,
                     Tweets = x.Tweets.AsQueryable().Select(TweetViewModel.ViewModel)
+                };
+            }
+        }
+
+        public static Expression<Func<User, UserViewModel>> EditModel
+        {
+            get
+            {
+                return x => new UserViewModel
+                {
+                    FullName = x.FullName,
+                    HomeTown = x.HomeTown,
+                    WebSite = x.WebSite,
+                    Image = x.Image.Photo
                 };
             }
         }
@@ -39,6 +54,8 @@ namespace Twitter.Web.Models
         public string WebSite { get; set; }
 
         public DateTime JoinDate { get; set; }
+
+        public byte[] Image { get; set; }
 
         public IEnumerable<TweetViewModel> Tweets { get; set; }
     }

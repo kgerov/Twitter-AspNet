@@ -299,6 +299,7 @@
     <Content Include="Views\Shared\DisplayTemplates\TweetViewModel.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\_LoginPartialLeftSide.cshtml" />
+    <Content Include="Views\Users\Settings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
