@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 using Twitter.Data.UnitOfWork;
 using Twitter.Web.Models;
@@ -15,6 +16,9 @@ namespace Twitter.Web.Controllers
         public ActionResult Index()
         {
             var tweets = this.Data.Tweets.All()
+                .Include(x => x.User)
+                .Include(x => x.Favorites)
+                .Include(x => x.Retweets)
                 .Select(TweetViewModel.ViewModel)
                 .ToList();
 

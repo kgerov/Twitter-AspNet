@@ -49,6 +49,11 @@ namespace Twitter.Data.UnitOfWork
             get { return this.GetRepository<Report>(); }
         }
 
+        public IRepository<Image> Images
+        {
+            get { return this.GetRepository<Image>(); }
+        }
+
         public int SaveChanges()
         {
             return this.dbContext.SaveChanges();

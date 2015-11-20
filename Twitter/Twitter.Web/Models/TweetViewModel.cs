@@ -14,7 +14,12 @@
                 {
                     Id = x.Id,
                     Content = x.Content,
-                    DatePublished = x.DatePublished
+                    DatePublished = x.DatePublished,
+                    Retweets = x.Retweets.Count,
+                    Favorites = x.Favorites.Count,
+                    Name = x.User.FullName,
+                    UserName = x.User.UserName,
+                    Image = x.User.Image.Photo
                 };
             }
         }
@@ -24,5 +29,15 @@
         public string Content { get; set; }
 
         public DateTime DatePublished { get; set; }
+
+        public string UserName { get; set; }
+
+        public string Name { get; set; }
+
+        public byte[] Image { get; set; }
+
+        public int Favorites { get; set; }
+
+        public int Retweets { get; set; }
     }
 }

@@ -28,6 +28,8 @@ namespace Twitter.Data
 
         public IDbSet<Tweet> Tweets { get; set; }
 
+        public IDbSet<Image> Images { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

@@ -13,6 +13,8 @@ namespace Twitter.Data
 
         IDbSet<Tweet> Tweets { get; set; }
 
+        IDbSet<Image> Images { get; set; }
+
         int SaveChanges();
     }
 }

@@ -1,4 +1,7 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using System.Web.Services.Description
+@using Microsoft.AspNet.Identity
+@using Twitter.Web.Helpers
+
 @model Twitter.Web.Models.UserViewModel
 
 
@@ -10,6 +13,7 @@
 <div class="row">
     <div class="col-md-3">
         <div class="col-md-12">
+            @ImageHelper.ShowImage(@Model.Image, "profile-pic")
             <h3>@Model.FullName</h3>
             <h5 id="profile-username"><span>&#64;</span>@Model.UserName</h5>
         </div>

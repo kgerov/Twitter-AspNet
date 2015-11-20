@@ -16,6 +16,8 @@ namespace Twitter.Data.UnitOfWork
 
         IRepository<Report> Reports { get; }
 
+        IRepository<Image> Images { get; }
+
         int SaveChanges();
     }
 }
