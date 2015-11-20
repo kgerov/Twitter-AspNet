@@ -23,14 +23,8 @@ namespace Twitter.Web.Controllers
                 Tweets = tweets
             };
 
-            if (this.UserProfile != null)
+            if (this.Request.IsAuthenticated)
             {
-                homeModel.isLoggedIn = true;
-                homeModel.UserName = this.UserProfile.UserName;
-            }
-            else
-            {
-                homeModel.isLoggedIn = false;
             }
 
             return this.View(homeModel);

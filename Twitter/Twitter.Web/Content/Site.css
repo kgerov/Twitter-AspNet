@@ -24,35 +24,52 @@ textarea {
     max-width: 280px;
 }
 
+/* Tweet Feed */
 .col-centered{
     float: none;
     margin: 0 auto;
 }
 
 .tweet {
-    margin-bottom: 5%;
-    border-bottom: 1px solid black;
+    padding-top: 5%;
+    border-bottom: 1px solid #E1E8ED;
+}
+
+.tweet:hover {
+    background-color: #F5F8FA;
 }
 
 .tweet-feed {
     padding: 1% 0%;
-    border: 1px solid black;
+    border: 1px solid #E1E8ED;
+    background-color: #FFFFFF;
 }
 
 .follow-box {
     margin-left: 1%;
 }
 
-#searchForm input {
-    padding-right: 20px;
-    margin-right: -10px;
+.user-additional-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10%;
+    font-size: 0.9em;
 }
 
-#searchFormBtn {
-    margin-left: -20px;
+.user-additional-info ul p {
+    display: inline;
+    vertical-align: text-top;
+    margin-left: 1.5%;
 }
 
-.navbar ul li a:hover {
-    margin-bottom: -3px;
-    border-bottom: 3px solid #5EA9DD;
+.user-additional-info ul li {
+    margin-bottom: 4%;
+}
+
+#location-icon {
+    margin-left: -2px;
+}
+
+#profile-username {
+    color: #8B99A6;
 }

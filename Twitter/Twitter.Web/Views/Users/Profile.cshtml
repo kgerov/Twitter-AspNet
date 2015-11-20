@@ -1,5 +1,42 @@
-﻿@model Twitter.Web.Models.UserViewModel
+﻿@using Microsoft.AspNet.Identity
+@model Twitter.Web.Models.UserViewModel
 
-<h1>@Html.DisplayFor(x => x.UserName)</h1>
 
-@Html.DisplayNameFor(x => x.Email): @Html.DisplayFor(x => x.Email)
+@{
+    ViewBag.Title = @Model.UserName;
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="col-md-12">
+            <h3>@Model.FullName</h3>
+            <h5 id="profile-username"><span>&#64;</span>@Model.UserName</h5>
+        </div>
+        <div class="col-md-12 user-additional-info">
+            <ul>
+                <li>
+                    <img src="~/Images/location-icon.png" width="20" id="location-icon" alt="" />
+                    <p>@Model.HomeTown</p>
+                </li>
+                <li>
+                    <img src="~/Images/chain-icon.png" width="16" alt="" />
+                    <p><a href="@Model.WebSite">@Model.WebSite</a></p>
+                </li>
+                <li>
+                    <img src="~/Images/calendar-icon.png" width="14" alt="" />
+                    <p>Joined @Model.JoinDate.ToString("MMM") @Model.JoinDate.Year</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6 tweet-feed">
+        @Html.DisplayFor(x => x.Tweets)
+    </div>
+    <div class="col-md-2 follow-box">
+        <div class="col-md-12">WHO TO FOLLOW?</div>
+        <div class="col-md-12">
+            @Html.Partial("~/Views/Shared/Footer.cshtml")
+        </div>
+    </div>
+</div>

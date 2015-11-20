@@ -68,3 +68,26 @@
     margin: auto;
     z-index: -1;
 }
+
+#searchForm input {
+    padding-right: 20px;
+    margin-right: -10px;
+}
+
+#searchFormBtn {
+    margin-left: -20px;
+}
+
+.navbar ul li a:hover {
+    margin-bottom: -3px;
+    border-bottom: 3px solid #5EA9DD;
+}
+
+.navbar-form input {
+    background: #F5F8FA;
+    height: 28px;
+}
+
+.navbar-form  {
+    line-height: 32px;
+}
