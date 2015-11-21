@@ -212,6 +212,11 @@
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\TweetController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Resources\General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>General.resx</DependentUpon>
+    </Compile>
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -324,6 +329,12 @@
       <Project>{4f195fdd-96ee-461c-8fa4-2669bb2bd399}</Project>
       <Name>Twitter.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\General.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>General.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

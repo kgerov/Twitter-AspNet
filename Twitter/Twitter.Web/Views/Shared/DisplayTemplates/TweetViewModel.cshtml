@@ -33,7 +33,7 @@
                     <span>@Model.Retweets</span>
                     <span id="tweet-favs-box-@Model.Id">
                         @{
-                            if (Model.IsLikedByUser)
+                            if (@Model.IsLikedByUser)
                             {
                                 <a data-ajax="true" href="/Tweet/UnfavoriteTweet?id=@Model.Id"
                                    data-ajax-method="POST" data-ajax-mode="replace"
@@ -46,7 +46,7 @@
                                    data-ajax-update="#tweet-favs-box-@Model.Id"><img src="~/Images/heart-icon.png" alt="" /></a>
                             }
 }
-                        <span id="favs-count-@Model.Id">@Model.Favorites</span>
+                        <span id="favs-count-@Model.Id">@Model.FavoritesCount</span>
                     </span>
                     
                     <a href=""><img src="~/Images/more-icon.png" alt="" /></a>

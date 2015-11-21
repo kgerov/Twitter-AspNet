@@ -70,3 +70,5 @@ D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\System.Web.Optimization.xml
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.csprojResolveAssemblyReference.cache
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.dll
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.pdb
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.Resources.General.resources
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.csproj.GenerateResource.Cache

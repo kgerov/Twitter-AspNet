@@ -57,12 +57,12 @@ namespace Twitter.Web.Controllers
                 this.Data.SaveChanges();
             }
 
-            string response = @"<a data-ajax='true' href='/Tweet/UnfavoriteTweet?id=@Model.Id'
+            string response = @"<a data-ajax='true' href='/Tweet/UnfavoriteTweet?id={0}'
                                    data-ajax-method='POST' data-ajax-mode='replace'
-                                   data-ajax-update='#tweet-favs-box-@Model.Id'><img src='~/Images/heart-red-icon.png' alt='' /></a>
-                                   <span id='favs-count-@Model.Id'>{0}</span>";
+                                   data-ajax-update='#tweet-favs-box-{0}'><img src='{1}' alt='' /></a>
+                                   <span id='favs-count-{0}'>{2}</span>";
 
-            return this.Content(String.Format(response, tweet.Favorites.Count));
+            return this.Content(String.Format(response, id, Resources.General.RedHeart, tweet.Favorites.Count));
         }
 
         [HttpPost]
@@ -78,12 +78,12 @@ namespace Twitter.Web.Controllers
                 this.Data.SaveChanges();
             }
 
-            string response = @"<a data-ajax='true' href='/Tweet/FavoriteTweet?id=@Model.Id'
+            string response = @"<a data-ajax='true' href='/Tweet/FavoriteTweet?id={0}'
                                    data-ajax-method='POST' data-ajax-mode='replace'
-                                   data-ajax-update='#tweet-favs-box-@Model.Id'><img src='~/Images/heart-icon.png' alt='' /></a>
-                                   <span id='favs-count-@Model.Id'>{0}</span>";
+                                   data-ajax-update='#tweet-favs-box-{0}'><img src='{1}' alt='' /></a>
+                                   <span id='favs-count-{0}'>{2}</span>";
 
-            return this.Content(String.Format(response, tweet.Favorites.Count));
+            return this.Content(String.Format(response, id, Resources.General.BlackHeart, tweet.Favorites.Count));
         }
     }
 }

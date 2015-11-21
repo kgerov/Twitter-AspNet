@@ -1,4 +1,7 @@
-﻿namespace Twitter.Web.Models
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Twitter.Web.Models
 {
     using System;
     using System.Linq.Expressions;
@@ -16,11 +19,10 @@
                     Content = x.Content,
                     DatePublished = x.DatePublished,
                     Retweets = x.Retweets.Count,
-                    Favorites = x.Favorites.Count,
+                    FavoritesCount = x.Favorites.Count,
                     Name = x.User.FullName,
                     UserName = x.User.UserName,
-                    Image = x.User.Image.Photo,
-                    IsLikedByUser = x.Favorites.Contains(x.User)
+                    Image = x.User.Image.Photo
                 };
             }
         }
@@ -37,7 +39,7 @@
 
         public byte[] Image { get; set; }
 
-        public int Favorites { get; set; }
+        public int FavoritesCount { get; set; }
 
         public int Retweets { get; set; }
 
