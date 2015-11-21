@@ -19,7 +19,8 @@
                     Favorites = x.Favorites.Count,
                     Name = x.User.FullName,
                     UserName = x.User.UserName,
-                    Image = x.User.Image.Photo
+                    Image = x.User.Image.Photo,
+                    IsLikedByUser = x.Favorites.Contains(x.User)
                 };
             }
         }
@@ -39,5 +40,7 @@
         public int Favorites { get; set; }
 
         public int Retweets { get; set; }
+
+        public bool IsLikedByUser { get; set; }
     }
 }
