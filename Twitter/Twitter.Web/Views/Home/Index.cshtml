@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Twitter.Web.Models.HomeViewModel
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Feed";
@@ -15,6 +17,10 @@
     </div>
     <div class="col-md-7 tweet-feed">
         @Html.DisplayFor(x => x.Tweets)
+
+        <div class="pager-box">
+            @Html.PagedListPager(Model.Tweets, page => Url.Action("Index", new { page }))
+        </div>
     </div>
     <div class = "col-md-2 follow-box">
         <div class="col-md-12">WHO TO FOLLOW?</div>

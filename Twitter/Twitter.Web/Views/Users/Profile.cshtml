@@ -3,7 +3,8 @@
 @using Twitter.Web.Helpers
 
 @model Twitter.Web.Models.UserViewModel
-
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = @Model.UserName;
@@ -36,6 +37,10 @@
     </div>
     <div class="col-md-6 tweet-feed">
         @Html.DisplayFor(x => x.Tweets)
+
+        <div class="pager-box">
+            @Html.PagedListPager(Model.Tweets, page => Url.Action(String.Format("/Profile/{0}", Model.UserName), new { page }))
+        </div>
     </div>
     <div class="col-md-2 follow-box">
         <div class="col-md-12">WHO TO FOLLOW?</div>

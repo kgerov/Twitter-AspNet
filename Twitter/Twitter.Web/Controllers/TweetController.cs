@@ -47,6 +47,12 @@ namespace Twitter.Web.Controllers
         [HttpPost]
         public ActionResult FavoriteTweet(int id)
         {
+            // To do go to register form
+            if (!this.Request.IsAuthenticated)
+            {
+                return this.JavaScript("");
+            }
+
             Tweet tweet = this.Data.Tweets.All().FirstOrDefault(x => x.Id == id);
             
             if (tweet != null)

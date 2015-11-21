@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using PagedList;
 
 namespace Twitter.Web.Models
 {
@@ -10,6 +10,6 @@ namespace Twitter.Web.Models
 
         public int NumberOfTweets { get; set; }
 
-        public ICollection<TweetViewModel> Tweets { get; set; }
+        public IPagedList<TweetViewModel> Tweets { get; set; }
     }
 }

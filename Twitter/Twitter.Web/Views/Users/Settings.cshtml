@@ -51,23 +51,21 @@
         }
     </div>
     <div class="col-md-6">
-        <form class="text-center" enctype="multipart/form-data">
-            <div class="form-horizontal">
-                <h4>Profile Picture</h4>
-                <hr />
-                <div id="imagePreview" style="background-image: url(@imgSrc)"></div>
-                <hr />
-                <div class="form-group">
-                    <div class="col-md-8">
-                        <input type="file" id="uploadEditorImage">
-                    </div>
-                    <div class="col-md-4">
-                        <button id="uploadImgBtn" class="btn btn-success">Upload</button>
-                        <button id="deleteImgBtn" class="btn btn-danger">Delete</button>
-                    </div>
+        <div class="form-horizontal form-image-upload">
+            <h4>Profile Picture</h4>
+            <hr />
+            <div id="imagePreview" style="background-image: url(@imgSrc)"></div>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input type="file" id="uploadEditorImage">
+                </div>
+                <div class="col-md-4">
+                    <button id="uploadImgBtn" class="btn btn-success">Upload</button>
+                    <button id="deleteImgBtn" class="btn btn-danger">Delete</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -93,6 +91,7 @@
                 contentType: false,
                 data: data,
                 success: function (response) {
+                   
                 },
                 error: function (er) {
                 }

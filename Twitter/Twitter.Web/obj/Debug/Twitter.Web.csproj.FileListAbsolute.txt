@@ -72,3 +72,7 @@ D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.dll
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.pdb
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.Resources.General.resources
 D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\obj\Debug\Twitter.Web.csproj.GenerateResource.Cache
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\PagedList.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\PagedList.Mvc.dll
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\PagedList.xml
+D:\OnCode\AspNet\TwitterApp\Twitter\Twitter.Web\bin\PagedList.Mvc.xml

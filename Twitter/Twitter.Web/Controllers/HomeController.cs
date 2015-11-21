@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Twitter.Data.UnitOfWork;
+using PagedList;
 using Twitter.Models;
 using Twitter.Web.Models;
 
@@ -16,9 +17,9 @@ namespace Twitter.Web.Controllers
         {
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            ICollection<TweetViewModel> tweets = null;
+            IOrderedQueryable<TweetViewModel> tweets;
 
             if (this.Request.IsAuthenticated)
             {
@@ -39,7 +40,7 @@ namespace Twitter.Web.Controllers
                         IsLikedByUser =
                             (x.Favorites.FirstOrDefault(u => u.UserName == this.UserProfile.UserName) != null)
                     })
-                    .ToList();
+                    .OrderByDescending(x => x.DatePublished);
             }
             else
             {
@@ -59,14 +60,16 @@ namespace Twitter.Web.Controllers
                         Image = x.User.Image.Photo,
                         IsLikedByUser = false
                     })
-                    .ToList();
+                    .OrderByDescending(x => x.DatePublished);
             }
+
+            int pageSize = Int32.Parse(Resources.General.PageSize);
+            int pageNumber = (page ?? 1);
 
             HomeViewModel homeModel = new HomeViewModel()
             {
-                Tweets = tweets
+                Tweets = tweets.ToPagedList(pageNumber, pageSize)
             };
-
 
             return this.View(homeModel);
         }

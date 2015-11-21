@@ -1,7 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using PagedList;
 using Twitter.Data.UnitOfWork;
 using Twitter.Models;
 using Twitter.Web.Models;
@@ -16,14 +18,45 @@ namespace Twitter.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Profile(string username)
+        public ActionResult Profile(string username, int? page)
         {
+            int pageSize = Int32.Parse(Resources.General.PageSize);
+            int pageNumber = (page ?? 1);
+
             var userProfile = this.Data.Users.All()
-               .Include(x => x.Tweets)
                .Include(x => x.Image)
                .Where(x => x.UserName == username)
-               .Select(UserViewModel.ViewModel)
+               .Select(x => new UserViewModel
+               {
+                   UserName = x.UserName,
+                   Email = x.Email,
+                   FullName = x.FullName,
+                   HomeTown = x.HomeTown,
+                   WebSite = x.WebSite,
+                   JoinDate = x.JoinDate,
+                   Image = x.Image.Photo
+               })
                .FirstOrDefault();
+
+            var tweets = this.Data.Tweets.All()
+                .Include(x => x.User)
+                .Where(x => x.User.UserName == userProfile.UserName)
+                .OrderByDescending(x => x.DatePublished)
+                .Select(t => new TweetViewModel()
+                {
+                    Id = t.Id,
+                    Content = t.Content,
+                    DatePublished = t.DatePublished,
+                    Retweets = t.Retweets.Count,
+                    FavoritesCount = t.Favorites.Count,
+                    Name = t.User.FullName,
+                    UserName = t.User.UserName,
+                    Image = t.User.Image.Photo,
+                    IsLikedByUser =
+                        (t.Favorites.FirstOrDefault(u => u.UserName == this.UserProfile.UserName) != null)
+                });
+
+            userProfile.Tweets = tweets.ToPagedList(pageNumber, pageSize);
 
             return View(userProfile);
         }

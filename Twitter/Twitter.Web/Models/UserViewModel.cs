@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
+using PagedList;
 using Twitter.Models;
 
 namespace Twitter.Web.Models
@@ -21,8 +21,7 @@ namespace Twitter.Web.Models
                     HomeTown = x.HomeTown,
                     WebSite = x.WebSite,
                     JoinDate = x.JoinDate,
-                    Image = x.Image.Photo,
-                    Tweets = x.Tweets.AsQueryable().Select(TweetViewModel.ViewModel)
+                    Image = x.Image.Photo
                 };
             }
         }
@@ -57,6 +56,6 @@ namespace Twitter.Web.Models
 
         public byte[] Image { get; set; }
 
-        public IEnumerable<TweetViewModel> Tweets { get; set; }
+        public IPagedList<TweetViewModel> Tweets { get; set; }
     }
 }

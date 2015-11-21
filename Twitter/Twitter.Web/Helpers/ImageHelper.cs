@@ -7,8 +7,14 @@ namespace Twitter.Web.Helpers
     {
         public static IHtmlString ShowImage(byte[] image, string id)
         {
-            var base64 = Convert.ToBase64String(image);
-            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            string imgSrc = Resources.General.DefaultProfilePic;
+
+            if (image != null)
+            {
+                string base64 = Convert.ToBase64String(image);
+                imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            }
+            
 
             string div = String.Format("<div id='{0}' style='background-image: url({1})'></div>", id, imgSrc);
             return new HtmlString(div);

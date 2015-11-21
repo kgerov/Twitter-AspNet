@@ -83,7 +83,7 @@ textarea {
 }
 
 .tweet-feed {
-    padding: 1% 0%;
+    padding-top: 1%;
     border: 1px solid #E1E8ED;
     background-color: #FFFFFF;
 }
@@ -140,4 +140,12 @@ textarea {
     background-size: cover;
     -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
     display: inline-block; 
+}
+
+.form-image-upload {
+    text-align: center;
+}
+
+.pager-box {
+    text-align: center;   
 }
