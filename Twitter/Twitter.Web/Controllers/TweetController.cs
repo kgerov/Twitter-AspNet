@@ -14,12 +14,6 @@ namespace Twitter.Web.Controllers
         {
         }
 
-        // GET: Tweets
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public ActionResult Compose()
         {
@@ -90,6 +84,42 @@ namespace Twitter.Web.Controllers
                                    <span id='favs-count-{0}'>{2}</span>";
 
             return this.Content(String.Format(response, id, Resources.General.BlackHeart, tweet.Favorites.Count));
+        }
+
+        [HttpGet]
+        public ActionResult Report(int id)
+        {
+            TweetViewModel reportedTweet = this.Data.Tweets.All()
+                .Select(TweetViewModel.ViewModel)
+                .FirstOrDefault(x => x.Id == id);
+
+            ReportViewModel report = new ReportViewModel()
+            {
+                Tweet = reportedTweet
+            };
+
+            return this.View(report);
+        }
+
+
+        [HttpPost]
+        public ActionResult Report(Report reportView)
+        {
+            int reportedId = reportView.ReportedId;
+
+            Twitter.Models.Report report = new Report()
+            {
+                Content = reportView.Content,
+                Reporter = null,
+                Reported = null,
+                ReportedId = reportView.ReportedId,
+                ReporterId = this.UserProfile.Id
+            };
+
+            this.Data.Reports.Add(report);
+            this.Data.SaveChanges();
+
+            return this.RedirectToAction("Index", "Home");
         }
     }
 }

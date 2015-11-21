@@ -218,6 +218,7 @@
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\TweetController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Models\ReportViewModel.cs" />
     <Compile Include="Resources\General.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,6 +316,7 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\_LoginPartialLeftSide.cshtml" />
     <Content Include="Views\Users\Settings.cshtml" />
+    <Content Include="Views\Tweet\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
